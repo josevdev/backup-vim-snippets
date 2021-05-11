@@ -1,0 +1,171 @@
+snippet #!
+	#!/usr/bin/env lua
+	$1
+snippet	addbody
+	addBody( ${1:object}, '${2:static/dynamic}' ${3:,commands?} )
+snippet el
+	addEventListener( ${1:TOUCH}, ${2:FUNCTION_NAME} )
+snippet alert
+	local ${1:VARIABLE} = native.showAlert( ${2:TITLE}, ${3:MESSAGE} ${4:[, BUTTON LABELS]} ${5:[, LISTENER]} )
+snippet alpha
+	alpha = ${1}
+snippet applylinearimpulse
+	applyLinearImpulse( ${1} )
+snippet	bounce
+	bounce = ${1}
+snippet btn
+	widget.newButton {
+	  label = '${1:TEXT}',
+	  labelColor = { default={255}, over={128} },
+	  defaultFile = '${2:FILEIMAGE}',
+	  overFile = '${3:FILEIMAGE}',
+	  height = ${4},
+	  width = ${5},
+	  onRelease = ${6:FUNCTIONNAME}
+	}
+snippet button
+	widget.newButton {
+	  label = '${1:TEXT}',
+	  labelColor = { default={255}, over={128} },
+	  defaultFile = '${2:FILEIMAGE}',
+	  overFile = '${3:FILEIMAGE}',
+	  height = ${4},
+	  width = ${5},
+	  onRelease = ${6:FUNCTIONNAME}
+	}
+snippet contentcenter
+	contentCenter
+snippet contentheight
+	contentHeight
+snippet ctr
+	contentCenter
+snippet timer
+	timer.performWithDelay( ${1:1000}, ${2:FUNCTION} ${3:[, ITERATIONS or 1]} )
+snippet delay
+	timer.performWithDelay( ${1:1000}, ${2:FUNCTION} ${3:[, ITERATIONS or 1]} )
+snippet dis
+	display
+snippet display
+	display
+snippet dynamic
+	dynamic
+snippet else
+	else
+	  ${1:CONTENT}
+	end
+snippet eif
+	elseif ${1:CONDITION} then
+	  ${2:CONTENT}
+	end
+snippet local
+	local ${1:x} = ${0:1}
+snippet fillcolor
+	setFillColor( ${1} )
+snippet font
+	native.systemFont
+snippet for
+	for ${1:i} = ${2:a}, ${3:b}, ${4:c} do
+		${0:print(i)}
+	end
+snippet forp
+	for ${1:i},${2:v} in pairs(${3:table_name}) do
+	   ${0:-- body}
+	end
+snippet fori
+	for ${1:i},${2:v} in ipairs(${3:table_name}) do
+	   ${0:-- body}
+	end
+snippet fun
+	function ${1:fname}(${2:...})
+		${0:-- body}
+	end
+snippet goto
+	composer.gotoScene( '${1:SCENE}', '${2:fade}', ${3:2000} )
+snippet grav
+	setGravity( ${1}, ${2} )
+snippet gravity
+	setGravity( ${1}, ${2} )
+snippet group
+	local ${1:NAME} = display.newGroup( ${2} )
+snippet hide
+	composer.hideOverlay( ${1:'fade'}, ${2:1000} )
+snippet hidebar
+	display.setStatusBar( display.HiddenStatusBar )
+snippet hidestatus
+	display.setStatusBar( display.HiddenStatusBar )
+snippet if
+	if ${1} then
+	  ${2}
+	end
+snippet image
+	newImageRect( '${1:image_name}', ${2:width}, ${3:height} )
+snippet img
+	local ${1:NAME} = display.newImageRect( '${2:image_name}', ${3:width}, ${4:height} )
+snippet impulse
+	applyLinearImpulse( ${1} )
+snippet insert
+	insert( ${1} )
+snippet newimagerect
+	newImageRect( '${1:image_name}', ${2:width}, ${3:height} )
+snippet imagesheet
+	newImageSheet( ${1:image_filename}, ${2:object} )
+snippet modal
+	composer.showOverlay( ${1:SCENENAME} ${2:[, OPTIONS]} )
+snippet newrect
+	local ${1:name} = display.newRect( ${2:[parent], ${3:x}, ${4:y}, ${5:width}, ${6:height} )
+snippet overlay
+	composer.showOverlay( ${1:SCENENAME} ${2:[, OPTIONS]} )
+snippet newimagesheet
+	newImageSheet( ${1:image_filename}, ${2:object} )
+snippet newtext
+	newText( ${1} )
+snippet print
+	print( ${1} )
+snippet printtable
+	for key, value in pairs( ${1:TABLE_NAME} ) do
+	  print( key, value )
+	end
+snippet physics
+	physics = require( 'physics' )
+snippet rand
+	math.randomseed( os.time() )
+snippet random
+	math.randomseed( os.time() )
+snippet repeat
+	repeat
+	  ${1:body}
+	until ${2:condition}
+snippet rect
+	local ${1:name} = display.newRect( ${2:[parent]}, ${3:x}, ${4:y}, ${5:width}, ${6:height} )
+snippet remove
+	display.remove( ${1:OBJECT} )
+snippet require
+	require( ${1} )
+snippet scroll
+	local ${1:NAME} = widget.newScrollView( ${2:OPTIONS} )
+snippet scolor
+	setFillColor( ${1} )
+snippet setcolor
+	setFillColor( ${1} )
+snippet setfill
+	setFillColor( ${1} )
+snippet setfillcolor
+	setFillColor( ${1} )
+snippet setgravity
+	setGravity( ${1}, ${2} )
+snippet sheet
+	newImageSheet( ${1:image_filename}, ${2:object} )
+snippet static
+	static
+snippet sfont
+	systemFont
+snippet start
+	start( ${1} )
+snippet systemfont
+	systemFont
+snippet text
+	local ${1:name} = display.newText( '${2:string}', ${3:x}, ${4:y}, native.systemFont, ${5:size} )
+snippet while
+	while ${1:condition} do
+	  ${2:body}
+	end

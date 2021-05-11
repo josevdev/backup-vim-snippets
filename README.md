@@ -1,2 +1,2 @@
-# vim-snippets
-custom vim snippets
+# snippets
+backup of all my vim snipmate snippets
