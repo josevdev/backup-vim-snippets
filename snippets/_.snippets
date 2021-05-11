@@ -7,16 +7,20 @@ snippet block
 snippet cheat
 	/=====================================================
 	auto format:
-		gg=G   	//auto formats everything
+		<Leader>format
 		=i?	//formats inside ? where ? is { [ t p etc...
 	commenting:
 		gc
+	compare files:
+		:diffthis //for each file
+	view git changes for a single file:
+		:Gdiff //uses fugitive plugin
 	delete lines that contain pattern:
 		:g/[PATTERN]/d
 	delete lines that don't contain pattern:
 		:g!/[PATTERN]/d
 	file info:
-		g ctrl+g
+		<Leader>info
 	surround:
 		ysiw + enclosing character
 		yss + enclosing character
@@ -35,19 +39,36 @@ snippet cheat
 		+ maximize
 	spellcheck (for local buffer only):
 		:setlocal spell spelllang=en_us
-		or
-		:setlocal spell
 	open file under cursor:
-		gf = in current window
-		<ctrl-w>gf = in new tab
-		<ctrl-w>f = in new window
+		<Leader>open
 	Ack (search for keywords in a project):
-		:Ack KEYWORD FILES
-		or
 		:Ack! KEYWORD FILES
 		t = opens file in new tab
+	hide fold column
+		setlocal foldcolumn=0
 	=====================================================\
 # (c) holds no legal value ;)
+snippet packagejson
+	{
+	  "name": "",
+	  "version": "1.0.0",
+	  "description": "",
+	  "main": "index.js",
+	  "scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "author": "",
+	  "license": "ISC",
+	  "devDependencies": {
+	    "gulp": "^3.9.1",
+	    "gulp-autoprefixer": "^5.0.0",
+	    "gulp-sass": "^4.0.1"
+	  }
+	}
+snippet @todo
+	//@TODO:
+snippet ?font
+	//font sizes = 13, 17, 30, 47, 77, 124, 201
 snippet c)
 	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.
 snippet date
@@ -362,3 +383,40 @@ snippet form
 	</form>
 snippet img
 	<img src='${1}' alt='[image of ${2}]' />
+#json snippets
+snippet webpackreact
+	{
+	    "name": "test-react",
+	    "version": "1.0.0",
+	    "description": "test for setting up webpack for react",
+	    "main": "index.js",
+	    "scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	    },
+	    "author": "me",
+	    "license": "MIT",
+	    "dependencies": {
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1"
+	    },
+	    "devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.5",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"html-webpack-plugin": "^3.2.0",
+		"webpack": "^4.16.0",
+		"webpack-cli": "^3.0.8",
+		"webpack-dev-server": "^3.1.4"
+	    }
+	}
+#vue snippets
+snippet vue
+	new Vue({
+	    el: '{1}',
+	    data: {
+		{2}
+	    },
+	    methods: {
+	    }
+	})

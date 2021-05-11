@@ -1,5 +1,7 @@
 # Some useful Unicode entities
 # Non-Breaking Space
+snippet imgplaceholder
+	<img src='http://via.placeholder.com/${1:height}x${2:width}' alt='[image of ]' />
 snippet nbs
 	&nbsp;
 # ←
@@ -48,7 +50,7 @@ snippet backspace
 snippet esc
 	&#x238B;
 # comment
-snippet //
+snippet <!
 	<!-- ${1} -->${0}
 # Generic Doctype
 snippet doctype HTML 4.01 Strict
@@ -113,8 +115,6 @@ snippet charset
 	charset="${1:utf-8}"
 snippet data
 	data-${1}="${2:$1}"
-snippet for
-	for="${1}"
 snippet height
 	height="${1}"
 snippet href
@@ -220,7 +220,7 @@ snippet body
 snippet br
 	<br />
 snippet button
-	<button type='${1:submit}'>${0}</button>
+	<button type='${1:submit}' name='${2}'>${0}</button>
 snippet buttonc
 	<button class='${1:button}' type='${2:submit}'>${0}</button>
 snippet buttoni
@@ -479,9 +479,9 @@ snippet img.
 snippet img#
 	<img id="${1}" src="${2}" alt="${3}" />
 snippet input
-	<input type='${1:text/email/submit/hidden/button/image/radio/checkbox/password}' name='${2}' id='${3:$2}' value='${4}' />
+	<input type='${1:text/email/number/submit/hidden/button/image/radio/checkbox/password}' name='${2}' id='${3:$2}' maxlength='${4}' placeholder='${5}' required${6}/>${7}
 snippet input.
-	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}" />
+	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" placeholder="${5}" />
 snippet input:text
 	<input type="text" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:submit
@@ -560,7 +560,7 @@ snippet lia+
 	<li><a href="${2:#}">${1}</a></li>
 	lia+
 snippet link
-	<link rel='stylesheet' href='${2}' />
+	<link rel='stylesheet' href='${1}' />
 snippet link:atom
 	<link rel="alternate" href="${1:atom.xml}" title="Atom" type="application/atom+xml" />
 snippet linkstyle
@@ -855,6 +855,8 @@ snippet ul+
 snippet var
 	<var>${0}</var>
 snippet video
-	<video src="${1} height="${2}" width="${3}" preload="${5:none}" autoplay="${6:autoplay}>${7}</video>
+	<video width="250" controls autoplay>
+		<source src="${1}" type="video/mp4" />
+	</video>
 snippet wbr
 	<wbr />

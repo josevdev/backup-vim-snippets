@@ -1,3 +1,22 @@
+# starter code for gruntfile.js
+snippet gulpfile
+	'use strict';
+
+	var gulp = require('gulp');
+	var sass = require('gulp-sass');
+	var autoprefixer = require('gulp-autoprefixer');
+
+	gulp.task('styles', function() {
+			return gulp.src('./*.scss')
+			.pipe(sass().on('error', sass.logError))
+			.pipe(autoprefixer({
+					browsers: ['cover 99.5%']
+					}))
+					.pipe(gulp.dest('./dist/styles/'));
+	});
+
+	gulp.watch('./*.scss', ['styles']);
+	gulp.task('default', ['styles']);
 # single quotes
 snippet '
 	'${1}'${2}

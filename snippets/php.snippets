@@ -1,3 +1,17 @@
+snippet printr
+	print_r( ${1} )${2}
+snippet sqlinsert
+	"INSERT into ${1:tablename} (${2:field1,field2,etc}) VALUES (${3:value1,value2,etc})"
+snippet myquery
+	mysqli_query(${1:connection}, ${2:query});
+snippet myconnect
+	$database_connection = mysqli_connect(${1:hostlocation}, ${2:username}, ${3:databasepassword}, ${4:databasename});
+snippet insert
+	INSERT INTO ${1:tablename} (${2:columnname,columnames}) VALUES (${3:value,values})
+snippet select
+	SELECT ${1:columnname,columnnames} FROM ${2:tablename}
+snippet header
+	header ("Location: ${1}");${2}
 snippet pp
 	<?php ${0} ?>
 snippet ec
@@ -104,9 +118,9 @@ snippet E
 	$_ENV['${1:variable}']
 snippet F
 	$_FILES['${1:variable}']
-snippet G
+snippet get
 	$_GET['${1:variable}']
-snippet P
+snippet post
 	$_POST['${1:variable}']
 snippet R
 	$_REQUEST['${1:variable}']
@@ -130,7 +144,7 @@ snippet /*
 	 * ${0}
 	 */
 # Class - post doc
-snippet doc_cp
+snippet phpdoc
 	/**
 	 * ${1:undocumented class}
 	 *
@@ -267,7 +281,7 @@ snippet do
 		${0}
 	} while (${1:/* condition */});
 snippet if
-	if(${1}) {
+	if (${1}) {
 	  ${2}
 	}${3}
 snippet ifn
@@ -321,7 +335,7 @@ snippet for
 		${0}
 	}
 snippet foreach
-	foreach ($${1:variable} as $${2:value}) {
+	foreach ($${1:array} as $${2:value}) {
 		${0}
 	}
 snippet foreachil
@@ -329,7 +343,7 @@ snippet foreachil
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
 snippet foreachk
-	foreach ($${1:variable} as $${2:key} => $${3:value}) {
+	foreach ($${1:array} as $${2:key} => $${3:value}) {
 		${0}
 	}
 snippet foreachkil
@@ -429,7 +443,7 @@ snippet aw
 # static var assign once
 snippet static_var
 	static $${1} = null;
-	if(is_null($$1)){
+	if (is_null($$1)){
 		$$1 = ${2};
 	}
 
@@ -572,9 +586,10 @@ snippet CSVIterator
 
 	} // end class
 
+snippet isset
+	isset( ${1} )
 snippet set
 	isset( ${1} )
-
 # phpunit
 snippet ase
 	$this->assertEquals(${1:expected}, ${2:actual});
@@ -614,17 +629,24 @@ snippet tc
 	{
 		${0:code}
 	}
+#wordpress snippets
 snippet wploop
-	if( have_posts() ) {
-	  while ( have_posts() ) {
-	    the_post();
-	    ${0:CONTENT}
-	  }
-	}
-snippet loop
-	if( have_posts() ) {
-	  while ( have_posts() ) {
-	    the_post();
-	    ${0:CONTENT}
-	  }
-	}
+	<?php if ( have_posts() ) : ?>
+	    <?php while ( have_posts() ) : the_post(); ?>
+		${0:CONTENT}
+	    <?php endwhile; ?>
+	<?php endif; ?>
+snippet abspath
+	if ( ! defined('ABSPATH') ) { die(); }
+snippet #white
+	#ffffff${0}
+snippet	add_menu_page
+	add_menu_page( '${1:page-title!required}', '${2:menu-title!required}', 'manage_options', '${3:menu-slug!required}', '${4:function-content-callback!required}', '${5:icon-url}', ${6:position-order-INT} );
+snippet add_submenu_page
+	add_submenu_page( '${1:parent-slug!required}', '${2:page-title!required}', '${3:menu-title!required}', 'manage_options', '${4:menu-slug!required}', '${5:function-content-callback}' );
+snippet register_setting
+	register_setting( '${1:settings-group-name!required}', '${2:option-name-to-sanitize!required}', ${3:extra-args = array()} );
+snippet add_settings_section
+	add_settings_section( '${1:section-id!required}', '${2:section-title!required}', '${3:function-content-callback!required}', '${4:settings-page-slug!required}' );
+snippet add_settings_field
+	add_settings_field( '${1:id-slug!required}', '${2:field-title-label!required}', '${3:function-content-callback!required}', '${4:settings-page-slug!required}', '${5:section-slug}', '${6:extra-args = array()}' );

@@ -7,10 +7,6 @@ snippet ex
 snippet re
 	var ${1} = require('${2:module_name}');
 # EventEmitter
-snippet on
-	on('${1:event_name}', function(${2:stream}) {
-	  ${3}
-	});
 snippet emit
 	emit('${1:event_name}', ${2:args});
 snippet once
@@ -20,7 +16,7 @@ snippet once
 # http. User js function snippet as handler
 snippet http
 	http.createServer(${1:handler}).listen(${2:port_number});
-# net 
+# net
 snippet net
 	net.createServer(function(${1:socket}){
 		${1}.on('data', function('data'){
